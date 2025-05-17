@@ -853,10 +853,10 @@
                 cartItem.innerHTML = `
                     <div>
                         <h4 class="font-medium">${item.name}</h4>
-                        <p class="text-sm text-gray-600">$${item.price.toFixed(2)} x ${item.quantity}</p>
+                        <p class="text-sm text-gray-600">$EGP{item.price.toFixed(2)} x ${item.quantity}</p>
                     </div>
                     <div class="flex items-center">
-                        <span class="font-medium mr-4">$${itemTotal.toFixed(2)}</span>
+                        <span class="font-medium mr-4">$EGP{itemTotal.toFixed(2)}</span>
                         <button class="remove-item text-red-500 hover:text-red-700" data-id="${item.id}">
                             <i class="fas fa-times"></i>
                         </button>
@@ -865,7 +865,7 @@
                 cartItems.appendChild(cartItem);
             });
 
-            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartSubtotal.textContent = `$EGP{subtotal.toFixed(2)}`;
             document.querySelectorAll('.remove-item').forEach(btn => {
                 btn.addEventListener('click', e => {
                     e.stopPropagation();
@@ -904,18 +904,18 @@
                 checkoutItem.innerHTML = `
                     <div>
                         <h4 class="font-medium">${item.name}</h4>
-                        <p class="text-sm text-gray-600">${item.quantity} x $${item.price.toFixed(2)}</p>
+                        <p class="text-sm text-gray-600">${item.quantity} x $EGP{item.price.toFixed(2)}</p>
                     </div>
-                    <span class="font-medium">$${itemTotal.toFixed(2)}</span>
+                    <span class="font-medium">$EGP{itemTotal.toFixed(2)}</span>
                 `;
                 
                 checkoutItems.appendChild(checkoutItem);
             });
             
             // Update totals
-            checkoutSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            checkoutSubtotal.textContent = `$EGP{subtotal.toFixed(2)}`;
             const total = subtotal + 5; // $5 shipping
-            checkoutTotal.textContent = `$${total.toFixed(2)}`;
+            checkoutTotal.textContent = `$EGP{total.toFixed(2)}`;
         });
 
         closeCheckoutModal.addEventListener('click', () => {
@@ -945,16 +945,16 @@
             
             orderDetails += `*Order Items:*%0A`;
             cart.forEach(item => {
-                orderDetails += `- ${item.name} ($${item.price.toFixed(2)}) x ${item.quantity}%0A`;
+                orderDetails += `- ${item.name} ($EGP{item.price.toFixed(2)}) x ${item.quantity}%0A`;
             });
             
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             const shipping = 5;
             const total = subtotal + shipping;
             
-            orderDetails += `%0A*Subtotal:* $${subtotal.toFixed(2)}%0A`;
-            orderDetails += `*Shipping:* $${shipping.toFixed(2)}%0A`;
-            orderDetails += `*Total:* $${total.toFixed(2)}`;
+            orderDetails += `%0A*Subtotal:* $ُEGP{subtotal.toFixed(2)}%0A`;
+            orderDetails += `*Shipping:* $EGP{shipping.toFixed(2)}%0A`;
+            orderDetails += `*Total:* $EGP{total.toFixed(2)}`;
             
             // Replace this with your actual WhatsApp number in international format
             // Example: +1234567890 (country code + number)
