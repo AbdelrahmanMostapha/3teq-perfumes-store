@@ -952,9 +952,9 @@
             const shipping = 5;
             const total = subtotal + shipping;
             
-            orderDetails += `%0A*Subtotal:* EGP${subtotal.toFixed(2)}%0A`;
-            orderDetails += `*Shipping:* EGP${shipping.toFixed(2)}%0A`;
-            orderDetails += `*Total:* EGP${total.toFixed(2)}`;
+            orderDetails += `%0A*Subtotal:* ${subtotal.toFixed(2)} EGP %0A`;
+            orderDetails += `*Shipping:* ${shipping.toFixed(2)} EGP %0A`;
+            orderDetails += `*Total:* ${total.toFixed(2)} EGP `;
             
             // Replace this with your actual WhatsApp number in international format
             // Example: +1234567890 (country code + number)
