@@ -945,15 +945,15 @@
             
             orderDetails += `*Order Items:*%0A`;
             cart.forEach(item => {
-                orderDetails += `- ${item.name} (£${item.price.toFixed(2)}) x ${item.quantity}%0A`;
+                orderDetails += `- ${item.name} (${item.price.toFixed(2)} EGP) x ${item.quantity}%0A`;
             });
             
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             const shipping = 5;
             const total = subtotal + shipping;
             
-            orderDetails += `%0A*Subtotal:* ${subtotal.toFixed(2)}%0A EGP`;
-            orderDetails += `*Shipping:* ${shipping.toFixed(2)}%0A EGP`;
+            orderDetails += `%0A*Subtotal:* ${subtotal.toFixed(2)} EGP%0A`;
+            orderDetails += `*Shipping:* ${shipping.toFixed(2)} EGP%0A`;
             orderDetails += `*Total:* ${total.toFixed(2)} EGP`;
             
             // Replace this with your actual WhatsApp number in international format
