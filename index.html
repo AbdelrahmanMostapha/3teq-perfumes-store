@@ -733,11 +733,11 @@
             
             
             
-            <div class="text-center mt-10">
+<!--             <div class="text-center mt-10">
                 <button class="border border-gold-600 text-gold-600 px-6 py-2 rounded hover:bg-gold-50 transition font-medium">
                     View All Products
                 </button>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -941,11 +941,11 @@
                                 </div>
                                 <div class="flex justify-between">
                                     <span>Shipping:</span>
-                                    <span>5.00 EGP</span>
+                                    <span>60.00 EGP</span>
                                 </div>
                                 <div class="flex justify-between font-bold text-lg">
                                     <span>Total:</span>
-                                    <span id="checkout-total">5.00 EGP</span>
+                                    <span id="checkout-total">60.00 EGP</span>
                                 </div>
                             </div>
                         </div>
@@ -1204,7 +1204,7 @@
             });
             
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const shipping = 5;
+            const shipping = 60;
             const total = subtotal + shipping;
             
             orderDetails += `%0A*Subtotal:* ${subtotal.toFixed(2)} EGP%0A`;
