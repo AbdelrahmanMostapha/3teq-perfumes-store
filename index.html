@@ -920,13 +920,9 @@
                                     <span>Subtotal:</span>
                                     <span id="checkout-subtotal">0.00 EGP</span>
                                 </div>
-                                <div class="flex justify-between">
-                                    <span>Shipping:</span>
-                                    <span>60.00 EGP</span>
-                                </div>
                                 <div class="flex justify-between font-bold text-lg">
                                     <span>Total:</span>
-                                    <span id="checkout-total">60.00 EGP</span>
+                                    <span id="checkout-total">0.00 EGP</span>
                                 </div>
                             </div>
                         </div>
@@ -1150,7 +1146,7 @@
             
             // Update totals
             checkoutSubtotal.textContent = `${subtotal.toFixed(2)} EGP`;
-            const total = subtotal + 60; // £6 shipping
+            const total = subtotal;
             checkoutTotal.textContent = `${total.toFixed(2)} EGP`;
         });
 
@@ -1185,12 +1181,9 @@
             });
             
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const shipping = 60;
-            const total = subtotal + shipping;
             
             orderDetails += `%0A*Subtotal:* ${subtotal.toFixed(2)} EGP%0A`;
-            orderDetails += `*Shipping:* ${shipping.toFixed(2)} EGP%0A`;
-            orderDetails += `*Total:* ${total.toFixed(2)} EGP`;
+            orderDetails += `*Total:* ${subtotal.toFixed(2)} EGP`;
             
             // Replace this with your actual WhatsApp number in international format
             // Example: +1234567890 (country code + number)
